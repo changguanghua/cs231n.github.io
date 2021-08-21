@@ -38,6 +38,20 @@ class LinearClassifier(object):
 
         Outputs:
         A list containing the value of the loss function at each training iteration.
+        
+        使用SGD训练线性分类器
+
+        输入：
+        - X：包含训练数据的形状为(N,D)的numpy数组；有N个D维的训练数据。
+        - y: 包含标签label的形状为（N,）的numpy数组；y[i]=c意思是X[i]标签label为c，其中0<=c<C。
+        - learning_rate ：（浮点数）优化的学习率。
+        - reg：（浮点）正则强度。
+        - num_iters: (整数) 优化时采用的步数。
+        - batch_size: (整数) 每一步使用的训练样例数。
+        - verbose: (布尔型) 为真则打印优化时候的进度。
+
+        返回：
+        一个列表，包含每次训练迭代时的损失函数值。
         """
         num_train, dim = X.shape
         num_classes = (
